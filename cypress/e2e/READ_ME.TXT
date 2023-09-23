@@ -1,1 +1,0 @@
-This is a sample of a read me file
