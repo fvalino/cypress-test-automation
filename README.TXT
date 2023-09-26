@@ -56,10 +56,41 @@ packages needed for cypress to run.
 
 INSTALL NPX
 ===========
+Installing NPX will make it possible to launch cypress using relative path from a
+terminal command prompt rather than absolut path. to install NPX from your command
+line prompt, type the following.
+
+npm install -g npx 
+
+Press Enter and the necessary packages will be installed.
 
 
-CONFIGURE CYPRESS 
+SETUP CYPRESS 
 =================
+Next you have to setup Cypress. You do this by typing the following command in the
+terminal window command prompt.
+
+npx cypress open 
+
+Cypress will recognize that this is the first time you are launching Cypress.
+
+1. Select E2E testing
+2. Click the Continue button to allow Cypress to install config files
+3. Select a browser and click the Start E2E Testing in <Brower you chose> button
+4. Click on Scaffold example specs - it will give you a list of sample tests that
+will be installed.
+5. Click on the OK I got it button
+
+At this point, if you go back to your IDE and view the project explorer, you will
+see that some new folders and files have been added.
+
+1. Cypress directory subdirectories
+2. The sample tests are in the cypress/e2e directory
+
+Note: Later in this document you will be asked to delete all the sample tests. This
+will allow you to have a clean project tree to setup the Cucumber framework.
+
+
 
 
 
