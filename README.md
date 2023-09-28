@@ -1,3 +1,25 @@
+# Cucumber/Cypress Test Automation
+
+## Setup
+
+### Pre-conditions
+
+You must have NodeJS installed in order to setup and run this project. The
+easiest way to do that is using [Node Version Manager](https://github.com/nvm-sh/nvm).
+Any reasonably modern version of NodeJS should work, but the project is known
+to work with `lts/hydrogen`.
+
+### Procedure
+
+1. Clone the project:  
+`git clone git@github.com:fvalino/cypress-test-automation.git`
+2. Install the dependencies (from the `package-lock.json` file):  
+`npm clean-install`
+3. Run the tests in headless mode:  
+`npm run test`
+
+---
+
 This README file will help you get setup to run the tests contained in this project.
 There are a fiew things you wil have to do to prepare this project to be able to run tests.
 
@@ -13,30 +35,33 @@ free to skip those sections and read through the sections where you may require 
 
 RECOMMENDATION
 ==============
+
 I recommend using VS Code as your IDE when working with this project. It has many
 useful features and extentions that will make your use of this test automation
 framework a lot easier. This is not necessary - just recommended.
 
-INSTALL Node and NPM 
+INSTALL Node and NPM
 ====================
+
 Go to the following URL.
 
-https://nodejs.org/en/download
+<https://nodejs.org/en/download>
 
 1. Download the LTS  of Node.js for specific to the OS running on your laptop.
 2. When the installer download completes, launch the installer.
 3. Accept all the default settings.
 
-When the installation completes successfully you can check to see if Node.js was installed 
+When the installation completes successfully you can check to see if Node.js was installed
 properly by typing
 
-'node -v' on terminal window. This should bring back the version of Node.js you just installed. 
+'node -v' on terminal window. This should bring back the version of Node.js you just installed.
 Similarly, you can also type 'npm -v' to check that npm was installed as well. If your system
 responds with a version number to both of these commands, then Node.js is preperly installed on
 your local machine.
 
 INITIALIZING NODE.JS - CREATING A PACKAGE.JASON
 ===============================================
+
 Assuming, you've cloned the cypress-test-automation repository to your local machine...
 
 1. Open the 'cypress-test-automation' folder in an IDE of your choice.
@@ -49,6 +74,7 @@ Cypress and Cucumber.
 
 OOWNLOAD CYPRESS PACKAGES
 ==========================
+
 Next, go back to your terminal window - making sure you are in your project directory - and type
 the following.
 
@@ -59,24 +85,24 @@ It will also add a new dependency in your package.jason file under devDependenci
 also have a new folder in your IDE explorer called "node_modules" which contains all the relevant
 packages needed for cypress to run.
 
-
 INSTALL NPX
 ===========
+
 Installing NPX will make it possible to launch cypress using relative path from a
 terminal command prompt rather than absolut path. to install NPX from your command
 line prompt, type the following.
 
-npm install -g npx 
+npm install -g npx
 
 Press Enter and the necessary packages will be installed.
 
-
-SETUP CYPRESS 
+SETUP CYPRESS
 =================
+
 Next you have to setup Cypress. You do this by typing the following command in the
 terminal window command prompt.
 
-npx cypress open 
+npx cypress open
 
 Cypress will recognize that this is the first time you are launching Cypress.
 
@@ -98,13 +124,13 @@ will allow you to have a clean project tree to setup the Cucumber framework.
 
 CUCUMBER SETUP
 ==============
-   
+
    DELETE UNNECESSARY DIRECTORIES
 
    In your project directory, navigate to .cypress/e2e/ and delete both the '1-getting-started' and '2-advanced-examples' folders
    along with any files contained therein.
 
-   The e2e directory is where you will save your .feature files which will contain the Gherkin descriptions of the features you are 
+   The e2e directory is where you will save your .feature files which will contain the Gherkin descriptions of the features you are
    planning on testing.
 
    INSTALLING CUCUMBER
@@ -113,11 +139,12 @@ CUCUMBER SETUP
 
       npm install --save-dev @badeball/cypress-cucumber-preprocessor
 
-   Press Enter on your keyboard. This will install all the necessary packages necessary to use Cucumber and 
+   Press Enter on your keyboard. This will install all the necessary packages necessary to use Cucumber and
    add @badeball/cypress-cucumber-preprocessor as a dev dependency in your package.json file.
 
-   UPDATING THE CYPRESS.CONFIG.JS FILE 
+UPDATING THE CYPRESS.CONFIG.JS FILE
    ===================================
+
    Now, we will update the cypress.config.js file.  For this framework to work properly, we'll need to turn this file into a Typescript
    file by renaming the file to cypress.config.ts. It is literally as simple as changing the file extention from .js to .ts.
 
@@ -209,6 +236,7 @@ Press Enter on your keyboard and relaunch the cypress app by typing 'npx cypress
 
 CONFIGURING VS CODE TO USE CUCUMBER
 ===================================
+
 We're almost there!
 
 Hopefully, you are using VS Code as your IDE as recommended earlier because we're going to need to add an extension.
@@ -251,6 +279,3 @@ IT SHOULD LOOK SOMETHING LIKE THIS
 }
 
 YOU'RE DONE! Save all you changes and you should be good to go.  Good luck!
-
-
-
