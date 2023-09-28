@@ -44,8 +44,10 @@ When ("I type trigger {string} in the last name field", (lastName) =>{
 })
 
 When ('I select an offer {string}', (offerSelector) =>{
-    cy.wait(15000); //if running this through browser bump up to about 18000ms)
-    cy.get(offerSelector).scrollIntoView().click();
+    cy.intercept('/offer/*').as('offerPage');
+    cy.wait('@offerPage').then((intercept) => {
+        cy.get(offerSelector).scrollIntoView().click();
+    })
 })
 
 When ('I click the Apply for This Loan button', () =>{

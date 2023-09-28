@@ -20,4 +20,5 @@ module.exports = defineConfig({
     specPattern: "**/*.feature",
     setupNodeEvents,
   },
+  requestTimeout: 10000,
 });
