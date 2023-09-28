@@ -13,5 +13,8 @@
   "scripts": {
     "cy:open": "cypress open",
     "test": "cypress run"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
   }
 }
