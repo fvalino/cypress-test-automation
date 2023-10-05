@@ -1,0 +1,20 @@
+{
+  "name": "cypress-test-automation",
+  "version": "1.0.0",
+  "description": "This README file will help you get setup to run the tests contained in this project. There are a few things you wil have to do to prepare this project to be able to run tests.",
+  "author": "Razorvision",
+  "license": "SEE LICENSE IN license.txt",
+  "private": true,
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^13.3.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+  }
+}
