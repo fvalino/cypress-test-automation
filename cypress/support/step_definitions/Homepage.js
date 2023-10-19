@@ -3,68 +3,40 @@ const {
   When,
   Then,
 } = require("@badeball/cypress-cucumber-preprocessor");
-const zincHomePage = require("/PageObject/ZincHomePageObjects.json");
+const homePageElements = require("../PageObject/ZincHomePageObjects");
+const _homePage = new homePageElements();
 
-const url = "https://www.myflashloan.com/";
+const url = "http://zinclusivestg.wpengine.com";
 const applyButton = "#apply-button-home";
 Given("I navigate to the homepage", () => {
-  cy.visit(url);
-});
-
-When("I click the Apply button", () => {
-  cy.get(applyButton).click();
-});
-
-When("I click the Fill the form button", () => {
-  cy.get("#ignore_me").click();
-});
-
-When("I type Deny in the last name field", () => {
-  cy.get("#input_1_18").type("{selectAll}").type("Deny");
-});
-
-When("I click the Submit Application button", () => {
-  //cy.wait(4000);
-  cy.get("#input_1_18").click();
-  cy.get("#gform_submit_button_1").scrollIntoView().click();
-});
-
-Then("I am presented with a application denied page", () => {
-  cy.wait(15000);
-  cy.contains("Unfortunately").should("be.visible");
-});
-
-Given("I navigate to a given MFL page {string}", (pageUrl) => {
-  cy.visit(pageUrl);
-});
-
-When(
-  "I click the Apply {string} button for that page",
-  (applyButtonSelector) => {
-    cy.get(applyButtonSelector).click();
-  }
-);
-
-When("I type trigger {string} in the last name field", (lastName) => {
-  cy.get("#input_1_18").type("{selectAll}").type(lastName);
-});
-
-When("I select an offer {string}", (offerSelector) => {
-  cy.intercept("/offer/*").as("offerPage");
-  cy.wait("@offerPage").then((intercept) => {
-    cy.get(offerSelector).scrollIntoView().click();
+  cy.visit(url, {
+    auth: {
+      username: "demo",
+      password: "49bdc37ec999",
+    },
   });
 });
 
-When("I click the Apply for This Loan button", () => {
-  cy.get("#gform_submit_button_3").scrollIntoView().click();
+When("I click the Get Started button", () => {
+  _homePage.clickGetStarted();
 });
 
-When("I accept the Loan Agreement", () => {
-  cy.get("#input_4_1_1").click();
-  cy.get("#gform_submit_button_4").click();
+When("I enter first name {string}", (f_Name) => {
+  _homePage.enterFirstName(f_Name);
 });
 
-When("I leave the page by going to Razorvision.net {string}", (razorVision) => {
-  cy.visit(razorVision);
+When("I enter last name {string}", (l_Name) => {
+  _homePage.enterLastName(l_Name);
+});
+
+When("I enter an email address {string}", (eMail_Address) => {
+  _homePage.enterEmailAddress(eMail_Address);
+});
+
+When("I accept the electronic communications agreement", () => {
+  _homePage.AcceptCommsAgreement();
+});
+
+When("I submit the subscription form", () => {
+  _homePage.clickSubscribe();
 });
