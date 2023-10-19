@@ -1,0 +1,5 @@
+{
+  "zinc_home_page": {
+    "get_started_bttn": "//*[@id=\"main-section\"]/div/div[1]/div/section/div/div/div/div[2]/div/div/a"
+  }
+}
