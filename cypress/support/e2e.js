@@ -14,7 +14,16 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands";
+
+// Uncomment lines 22 through 26 if Uncaught Exceptions is blocking you from running through all your scripts
+// You should still report the issue to development and test it again with this code commented out once
+// development resolves the issue.
+// Cypress.on("uncaught:exception", (err, runnable) => {
+//   // returning false here prevents Cypress from
+//   // failing the test
+//   return false;
+// });
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
