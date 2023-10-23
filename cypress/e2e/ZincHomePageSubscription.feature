@@ -7,6 +7,7 @@ Feature: Subscribe for updates regarding Zinclusive application feature availabi
     When I click the Get Started button
     And I enter first name "Bob"
     And I enter last name "Tester"
-    And I enter an email address "test.tester@example.com"
+    And I enter an email address "test.tester@test.com"
     And I accept the electronic communications agreement
     And I submit the subscription form
+    Then an invalid email error is displayed
