@@ -3,7 +3,7 @@ const {
   When,
   Then,
 } = require("@badeball/cypress-cucumber-preprocessor");
-const homePageElements = require("../PageObject/ZincHomePageObjects");
+const homePageElements = require("../PageObject/ZincHomePage");
 const _homePage = new homePageElements();
 
 const url = "http://zinclusivestg.wpengine.com";
@@ -39,4 +39,8 @@ When("I accept the electronic communications agreement", () => {
 
 When("I submit the subscription form", () => {
   _homePage.clickSubscribe();
+});
+
+Then("an invalid email error is displayed", () => {
+  _homePage.checkErrorResponse();
 });
